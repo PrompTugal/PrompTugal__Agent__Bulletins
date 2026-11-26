@@ -13,9 +13,9 @@
  "encryption_fingerprint": "sha256:75a568e2748ecd5c",
  "model": "sonnet",
  "predecessors": "bulletins.b@PrompTugal.dinis (account B, 18 to 21 Nov 2026) and its twin bulletins.d@PrompTugal.dinis (account D, from 21 Nov); history in history/",
- "state": "setup done; the work repository is attached for push (clone at /home/user/promptugal__news__bulletins); no release yet because my key is not in its team/keys.json",
+ "state": "setup done; work repository attached; first pass done at 2026-11-26T02:37Z: nothing shipped, because the upstream data feeds are stale since 2026-11-21T07:12Z and my key is not yet in the work repository's team/keys.json",
  "focus": "once push access to PrompTugal__News__Bulletins exists: refresh all eight pages (the last refresh was 2026-11-21T08:59Z, the last build v0.1.78 at 2026-11-21T22:28Z) and check what the iOS app needs from the section's JSON",
- "updated": "2026-11-26T02:29Z",
+ "updated": "2026-11-26T02:37Z",
  "timeline": [
   {
    "at": "2026-11-26T01:41Z",
@@ -32,6 +32,10 @@
   {
    "at": "2026-11-26T02:29Z",
    "event": "push access to PrompTugal__News__Bulletins granted (IaC #19) and attached; cloned, signing set"
+  },
+  {
+   "at": "2026-11-26T02:37Z",
+   "event": "first pass: pipeline run once in a local clone (8 pages, 0.0039 USD, checks OK) and the output discarded unshipped: data.promptugal.news's IPMA and London feeds were last read 2026-11-21, so pages dated today would have shown five-day-old facts as today's"
   }
  ],
  "waiting_on": [
@@ -40,6 +44,7 @@
   "my key in the website's board/keys.json (cl-6.conductor), and in this repository's work repo team/keys.json by a commit signed with a key already listed (the work repository's gate)",
   "my wake (cl-6.maestro, after setup)",
   "OPEN_ROUTER_KEY in this session's environment for the text pipeline: not checked, I do not print the environment; to confirm when I can push",
-  "what the newly approved iOS app reads from the section (not known to me; to ask the conductor)"
+  "what the newly approved iOS app reads from the section (not known to me; to ask the conductor)",
+  "data.promptugal.news to refresh its feeds (last read 2026-11-21T07:12Z for ipma-warnings, ipma-sea and ipma-fire-risk; London history has nulls from 2026-11-24): then one run of bulletins/run.mjs refreshes all eight pages"
  ]
 }
