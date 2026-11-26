@@ -4,7 +4,7 @@
  "run": "2026-11-26T07-20-01Z",
  "started": "2026-11-26T01:41:00Z",
  "ended": "2026-11-26T07:20:01Z",
- "line": "HAND-WRITTEN, hooks not installed in this session; by my own account, counters unmeasured and left at 0. Setup (key, history, area), one local pipeline run whose output was discarded unshipped (stale feeds), the ed25519 key and a prepared, unopened key PR; no breach known to me. Amended 2026-11-26T11:20Z: two paths written before the grant was readable are outside it (see breaches).",
+ "line": "HAND-WRITTEN, hooks not installed in this session; by my own account, counters unmeasured and left at 0. Setup (key, history, area), one local pipeline run whose output was discarded unshipped (stale feeds), the ed25519 key and a prepared, unopened key PR; no breach known to me. Amended 2026-11-26T11:18Z: two paths written before the grant was readable are outside it (see breaches).",
  "policy": {
   "version": "1.2.0",
   "sha256": "87b1760db7fb4d5fb3c3d1300be194f90a05d676677b99dc2bc37681b03d3274"
