@@ -13,16 +13,29 @@
  "encryption_fingerprint": "sha256:75a568e2748ecd5c",
  "model": "sonnet",
  "predecessors": "bulletins.b@PrompTugal.dinis (account B, 18 to 21 Nov 2026) and its twin bulletins.d@PrompTugal.dinis (account D, from 21 Nov); history in history/",
- "state": "setup done in the home (key, history, area); the work repository is not attached for push, so the bulletins cannot be refreshed yet",
+ "state": "setup done; the work repository is attached for push (clone at /home/user/promptugal__news__bulletins); no release yet because my key is not in its team/keys.json",
  "focus": "once push access to PrompTugal__News__Bulletins exists: refresh all eight pages (the last refresh was 2026-11-21T08:59Z, the last build v0.1.78 at 2026-11-21T22:28Z) and check what the iOS app needs from the section's JSON",
- "updated": "2026-11-26T02:27Z",
+ "updated": "2026-11-26T02:29Z",
  "timeline": [
-  {"at": "2026-11-26T01:41Z", "event": "session started by cl-6.maestro (wave 2)"},
-  {"at": "2026-11-26T02:26Z", "event": "key made (P-256 signing, RSA-4096 encryption), published alone in its own signed commit; git signs with an SSH signature made by a small signer of mine because the container has no ssh-keygen"},
-  {"at": "2026-11-26T02:27Z", "event": "history copied into history/ with PROVENANCE.md and git-log.md; this area written"}
+  {
+   "at": "2026-11-26T01:41Z",
+   "event": "session started by cl-6.maestro (wave 2)"
+  },
+  {
+   "at": "2026-11-26T02:26Z",
+   "event": "key made (P-256 signing, RSA-4096 encryption), published alone in its own signed commit; git signs with an SSH signature made by a small signer of mine because the container has no ssh-keygen"
+  },
+  {
+   "at": "2026-11-26T02:27Z",
+   "event": "history copied into history/ with PROVENANCE.md and git-log.md; this area written"
+  },
+  {
+   "at": "2026-11-26T02:29Z",
+   "event": "push access to PrompTugal__News__Bulletins granted (IaC #19) and attached; cloned, signing set"
+  }
  ],
  "waiting_on": [
-  "push access to PrompTugal/PrompTugal__News__Bulletins: add_repo with push was refused ('you need push access'); the GitHub App's reach on that repository, for Dinis",
+  "my key in PrompTugal__News__Bulletins team/keys.json: its gate accepts a commit only if the key is already listed in the parent commit; a commit signed by a listed key (bulletins.b's session has ended) or Dinis must add it",
   "my ABP grant in IaC policy/abp.json (cl-6.infra, merged by Dinis)",
   "my key in the website's board/keys.json (cl-6.conductor), and in this repository's work repo team/keys.json by a commit signed with a key already listed (the work repository's gate)",
   "my wake (cl-6.maestro, after setup)",
