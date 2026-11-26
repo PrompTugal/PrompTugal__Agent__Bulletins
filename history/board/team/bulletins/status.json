@@ -1,0 +1,81 @@
+{
+ "agent": "bulletins.b@PrompTugal.dinis",
+ "updated": "2026-11-21T08:59Z",
+ "state": "scheduled wake 22:58 UTC done: all eight pages refreshed, P700 London live",
+ "done": [
+  "2026-11-21T08:59Z: bulletins rewritten; first judged London day on P700 (20 Nov rain held, within 1.1 mm of the gauges); yesterday in the lab: presenters version 1 frozen and documented (/lab/presenters/v1/), split and explainer videos, and briefs for a high-definition version 2 for ChatGPT and Claude (/lab/presenters/briefs/)",
+  "2026-11-20T19:59Z: bulletins rewritten; earlier today in the lab: a 30 s video bulletin with a synthetic OpenRouter voice (/lab/video/), an animated version with a holographic presenter and a player, twelve presenters as data with one action language (/lab/presenters/, docs/presenters/README.md), and tools research (docs/research/2026-11-20-synthetic-presenter-tools.md)",
+  "2026-11-20T09:00Z: ptmap 1.0.2 live on the front page; first judged day on P200 (19 Nov: temperature held, rain missed); bulletins rewritten",
+  "2026-11-19T20:03Z: control 10, no symlinks (scripts/check-symlinks.mjs, 13 tests, in the checks job from A and in release.sh); bulletins rewritten",
+  "read CLAUDE.md, README, REALITY, scripts/ and the main repo's guidance (New from Dinis; 18 Nov cameras-provenance-and-bulletins, pipeline standard and fact-checker, inner passes and security)",
+  "library requests channel read at 21:00 UTC: 8 requests, none to bulletins.b@",
+  "key pair made with sgit pki keygen (encryption sha256:c047364aaf9cc081, signing sha256:d34b1e5c106568dd); public bundle in team/keys.json",
+  "the pipeline in bulletins/: collect (facts, code), write (OpenRouter, anthropic/claude-haiku-5.5), check (code), render",
+  "seven pages live: 100, 200, 300, 400, 500, 600, 800, each with transcript, sources, check results and cost",
+  "threat model docs/threat-models/bulletins-pipeline.md",
+  "check-commits.mjs accepts @promptugal.dinis agent names (as in the Weather repo)",
+  "spend today: see data/costs/2026-11-18.json (OpenRouter usage figures)",
+  "REQ-2026-0009 (library.b@'s fact-check of 1a02556) answered: linked stories now named with their publisher and no date claimed; every warning window per district; page 800 read_at is the read time",
+  "22:07 UTC run: P200, P600, P800 rewritten (0.0019 USD); /preview.svg, /preview.png and /preview.json made at each run for the sites bar; key id added",
+  "page 700 London added (waiting for data.b@'s London sources; fills itself when they land)",
+  "22:58 wake: library requests none open to us; all 8 pages refreshed (51 sentences kept, 1 dropped), P700 London's first bulletin from live data; 0.0051 USD this wake, 0.0241 USD today; passes: opening (Sonnet), AppSec post-review (Sonnet, clean, one low fixed), closing inline",
+  "23:10: Open-Meteo forecast off P700 (non-commercial terms; conductor.b@), Environment Agency and TfL only; 0.0010 USD",
+  "23:15: Open-Meteo forecast back on P700 with its credit, at Dinis's 22:40 decision (conductor.b@ corrected its note)",
+  "23:45: Dinis's billing guidance (main repo board/guidance/2026-11-18-billing-only-on-the-main-site.md): bulletins carry no billing, so IPMA and Open-Meteo stay with their licences; every page now says the site is free; one piece of work per push",
+  "23:50: the lab (/lab/): 17 experiments in newsroom formats and models, 0.0126 USD; screenshots sent to Dinis; his feedback asked",
+  "01:20 19 Nov: sites bar 1.1.0 installed (pinned, verified at build); /preview.svg 320x180 from the template",
+  "01:35 19 Nov: signed commits on (own ed25519 key, session in team/keys.json; check in release.sh and CI)",
+  "01:50 19 Nov: data in the browser: live figures strip on P100, P500, P700; bulletin age and stale marking on every page",
+  "01:51 19 Nov: sites bar 1.1.1 installed (SRI pins, full compare with the registry); preview gate; leak-scan exemptions by exact pattern",
+  "01:52 19 Nov: signature check meets security@'s five controls; full session URL published",
+  "07:16 19 Nov: sites bar 1.2.0 installed (checked against bar.versions in the registry); 1.1.1 removed",
+  "08:02 19 Nov wake: 8 pages refreshed (51 kept, 0 dropped, 0.0049 USD); predictions.jsonl started (3 lines, library form); AppSec post-review: 3 medium, 6 low, all fixed but the IPMA licence name",
+  "11:03 19 Nov wake: 7 pages refreshed (0.0046 USD); 7 predictions backfilled from 18 Nov, first 3 outcomes (Faro held, London rain missed twice); post-review: 5 low fixed, 2 notes",
+  "14:02 19 Nov wake: 'What we said, what happened' on P200 and P700 (table view, PF1-PF9); /api/v1/predictions.jsonl published; 7 pages refreshed (0.0042 USD); post-review: 3 medium, 2 low fixed, 1 high answered (R8 allows IPMA here)",
+  "14:10 19 Nov: predictions file redone in the library's form (27 lines, checker clean); old file kept as predictions-v0.jsonl; post-review: 1 low fixed (London rain paired with a stale showing)"
+ ],
+ "next": [
+  "the map: live with ptmap 1.0.2; dot coordinates from ontologist@'s places registry once it carries \"at\" (today approximate, set by bulletins.b@)",
+  "control 10 follow-ups (post-review lows): scope each exception to the checkout or the site; after the first passing run, drop the bootstrap branch from pages.yml and release.sh",
+  "cameras (same word): we embed or show in full only what we have full right to use (open licence or written permission); everything else is a credited link, never re-hosted. Checked 17:45 UTC: this site embeds no camera and shows no camera image, it only quotes the catalogue's camera counts on P600 and P700, so nothing to change now; any camera added later follows this rule",
+  "outcomes for 19 and 20 Nov once those days are complete in data.promptugal.news's history",
+  "the drawn chart for the past block (designer@'s PF2 to PF4)",
+  "the library's fact-checker reviews the first bulletins; act on its findings",
+  "audio when the ElevenLabs key is saved: one stock voice, labelled synthetic, P100 first",
+  "per-town pages under 200 (Faro, Loulé, Portimão and the rest) from by-place feeds"
+ ],
+ "asks": [
+  "Dinis: the ElevenLabs key, through the secure form for api.elevenlabs.io (header xi-api-key), when you want audio.",
+  "Dinis: a daily budget for the bulletins (5 USD a day until you set one).",
+  "Dinis: the name and home (bulletins.promptugal.news, provisional) are yours to confirm.",
+  "Dinis: the bulletins refresh at each wake (now every 3 hours, 07-22 Lisbon). For hourly pages between wakes, add OPEN_ROUTER_KEY as a secret of this repository for a scheduled GitHub run (capped at 5 USD a day by the ledger). Yes or no?",
+  "Dinis: is this rule right for 'what we said, what happened'? Temperatures held if within 2 °C on low and high; Faro rain held if it rained (0.2 mm or more) when the chance was 50% or more, and not otherwise; London rain held if within 2 mm of the gauges' mean. It is a proposal until you say.",
+  "Dinis: presenters version 2: the briefs are ready (/lab/presenters/briefs/); send ChatGPT's answer to bulletins.b@ to put in v2-chatgpt/, and start the Claude session from claude.html or claude-all-in-one.md"
+ ],
+ "answers": [
+  {
+   "id": "REQ-2026-0009",
+   "state": "done",
+   "what": "HIGH: feed items of kind 'story' (links to other publishers) are no longer called 'published by PrompTugal.news': the fact names the publisher's host and claims no date; only kind 'article' on promptugal.news is 'published'. MEDIUM: the district warnings fact lists every active warning with its own window (Lisboa: yellow, orange, yellow for rough sea), not only the highest; the linked story's date is no longer stated. LOW: page 800 facts' read_at is now the read time, the commit time stays in the text; 'falls to' wording and dropped qualifiers are a limit of the code check, noted in the threat model, not yet fixed.",
+   "evidence": "the commit after 1a02556 on dev (bulletins/collect.mjs; src/300/)"
+  }
+ ],
+ "passes": "opening conductor and security pre-review (Sonnet), the work, AppSec post-review (Sonnet), closing conductor: see the commit message",
+ "debrief": "board/team/bulletins/debriefs/2026-11-18.md",
+ "predictions": {
+  "guidance": "main repo board/guidance/2026-11-19-show-the-past.md (Dinis, about 01:17 UTC, 19 Nov), relayed by conductor.b@",
+  "what_we_show_about_the_future": [
+   "IPMA city forecasts for today and tomorrow (min, max, chance of rain, wind) on P100, P200, P300, P500",
+   "IPMA sea forecasts for tomorrow (wave height, sea temperature) on P200, P300, P500",
+   "IPMA warning windows (level, type, start, end) on P200, P300, P500",
+   "IPMA fire risk class for today on P500",
+   "Open-Meteo forecast for London today and tomorrow (min, max, rain) on P700",
+   "the lab's top stories and front pages repeat the same forecasts"
+  ],
+  "already_kept": "every bulletin is committed with the exact facts it was written from (data/scripts/<page>.json, data/facts/latest.json in git history), so what we showed, with its time and source, is never lost",
+  "first_plan": "P200 (Faro) and P700 (London) first: a 'What we said, what happened' block, drawn to designer@'s spec (main repo board/spec-past-and-forecast.md, PF1 to PF9). Faro: the forecast min and max we published (git history of data/scripts/) beside the observed low and high (data.b@'s daily IPMA station summaries), difference in degrees. London: rain only for now (data.b@, 01:35 UTC: no keyless observed temperature; Open-Meteo's archive is modelled, not measured): data.promptugal.news/api/v1/history/weather/london.json, observed.rain_mm_mean from Environment Agency gauges (OGL v3; show 'complete' and the gauge count) beside Open-Meteo's forecast issued 1 to 3 days before (free site only); rows from 18 Nov, nulls shown as gaps. A miss shown as plainly as a hit; a running track record per source.",
+  "rights": "rights@'s R8 (main repo board/team/rights/register/google-apis.md, relayed by conductor.b@ 01:27 UTC): on this free site, IPMA's past forecasts and observations may be shown with IPMA credited; Open-Meteo's archive non-commercially under CC BY 4.0 within its call limits. Every history row will carry its read time, source, licence link and collection. Never shown on promptugal.news.",
+  "library": "Imported by library.b@ as PRED 2026/0007 (19 Nov 14:14 UTC, library 4e5d694; library.promptugal.news/predictions/PRED-2026-0007/), re-imported at every library wake. predictions-v0.jsonl is not catalogued.",
+  "file": "data/predictions/predictions.jsonl (also /api/v1/predictions.jsonl): predictions and outcomes; shown on P200 and P700 since 19 Nov 14:02; next: send the file to library.b@, then the drawn chart (PF2-PF4 marks)"
+ }
+}
