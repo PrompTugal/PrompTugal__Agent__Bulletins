@@ -1,27 +1,31 @@
 --- a/scripts/release.sh	2026-11-27 02:43:15.402015816 +0000
-+++ b/scripts/release.sh	2026-11-27 02:43:15.437780683 +0000
++++ b/scripts/release.sh	2026-11-27 02:46:09.191639469 +0000
 @@ -37,6 +37,8 @@
    node scripts/check-symlinks.trusted.mjs "$(git rev-parse origin/dev)" "$(git rev-parse HEAD)" ${ex[@]+"${ex[@]}"} --site src
  }
  symlinks
-+AGENT=cl-6.bulletins
++AGENT=cl-6.bulletins # hard-coded, never from the environment
 +# dev-gate (PrompTugal__IaC #35): never push dev. Push to work/$AGENT, then wait for the App to fast-forward dev to our SHA.
  for i in 1 2 3 4 5; do
    git fetch -q origin dev
    git rebase -q origin/dev
-@@ -48,7 +50,16 @@
+@@ -48,7 +50,20 @@
    trailers >/dev/null
    node scripts/check-signatures.trusted.mjs origin/dev HEAD >/dev/null
    symlinks >/dev/null
 -  if git -c push.negotiate=true push -q origin HEAD:dev; then echo "released $(git rev-parse --short HEAD) to dev"; exit 0; fi
 -  sleep $((i * 3))
 +  SHA=$(git rev-parse HEAD)
-+  git -c push.negotiate=true push -q origin "HEAD:refs/heads/work/$AGENT" || { sleep $((i * 3)); continue; }
++  # security's ruling (26 Nov 2026): only --force-with-lease with the exact sha expected on our own work branch; never -f, never another ref.
++  LAST=$(git ls-remote origin "refs/heads/work/$AGENT" | cut -f1)
++  if [ -z "$LAST" ]; then PUSH=(git -c push.negotiate=true push -q origin "HEAD:refs/heads/work/$AGENT")
++  else PUSH=(git -c push.negotiate=true push -q "--force-with-lease=refs/heads/work/$AGENT:$LAST" origin "HEAD:refs/heads/work/$AGENT"); fi
++  "${PUSH[@]}" || { sleep $((i * 3)); continue; }
 +  # Wait up to about 20 minutes: dev equals our SHA means released; a gate/$AGENT/<sha12>-fail tag means refused.
 +  for w in $(seq 1 12); do
 +    sleep 90
 +    [ "$(git ls-remote origin refs/heads/dev | cut -f1)" = "$SHA" ] && { echo "released ${SHA:0:7} to dev"; exit 0; }
-+    if git ls-remote --tags origin "gate/$AGENT/*" | grep -q "${SHA:0:12}-fail"; then echo "the gate refused ${SHA:0:12}: stop and report" >&2; exit 1; fi
++    if [ -n "$(git ls-remote --tags origin "refs/tags/gate/$AGENT/${SHA:0:12}-fail")" ]; then echo "the gate refused ${SHA:0:12}: stop and report" >&2; exit 1; fi
 +    NEW=$(git ls-remote origin refs/heads/dev | cut -f1)
 +    # dev moved and is not our SHA: go round again (rebase onto it, push work/$AGENT again).
 +    [ "$NEW" != "$(git rev-parse origin/dev)" ] && break
