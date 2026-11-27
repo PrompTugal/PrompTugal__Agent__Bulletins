@@ -16,7 +16,7 @@
 -  if git -c push.negotiate=true push -q origin HEAD:dev; then echo "released $(git rev-parse --short HEAD) to dev"; exit 0; fi
 -  sleep $((i * 3))
 +  SHA=$(git rev-parse HEAD)
-+  # security's ruling (26 Nov 2026): only --force-with-lease with the exact sha expected on our own work branch; never -f, never another ref.
++  # security's ruling (27 Nov 2026): only --force-with-lease with the exact sha expected on our own work branch; never -f, never another ref.
 +  LAST=$(git ls-remote origin "refs/heads/work/$AGENT" | cut -f1)
 +  if [ -z "$LAST" ]; then PUSH=(git -c push.negotiate=true push -q origin "HEAD:refs/heads/work/$AGENT")
 +  else PUSH=(git -c push.negotiate=true push -q "--force-with-lease=refs/heads/work/$AGENT:$LAST" origin "HEAD:refs/heads/work/$AGENT"); fi
